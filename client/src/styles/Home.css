@@ -1,0 +1,60 @@
+/* Main Title */
+.main-title {
+  font-family: 'AbrilFatface';
+  font-size: 6rem;
+  margin: 1rem 0;
+  text-shadow:
+		-1px -1px 4px rgba(0, 0, 0, 0.25),
+		1px -1px 4px rgba(0, 0, 0, 0.25),
+		-1px 1px 4px rgba(0, 0, 0, 0.25),
+		1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-title-container {
+  float: right;
+  margin: 25vh 10vw 0 0;
+  text-align: right;
+}
+
+/* BG Imgs */
+.bg-img {
+  width: 20vw;
+  vertical-align: middle;
+  opacity: 0;
+}
+
+.bg-img-anim0 {
+  animation: fadeinLoad 2s 4s forwards;
+}
+
+.bg-img-anim1 {
+  animation: fadeinLoad 4s 2s forwards;
+}
+
+.bg-img-anim2 {
+  animation: fadeinLoad 5s 2s forwards;
+}
+
+.bg-img-anim3 {
+  animation: fadeinLoad 3s 1s forwards;
+}
+
+.bg-container {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bg-col {
+  flex: 20%;
+}
+
+@keyframes fadeinLoad {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 0.75;
+  }
+}

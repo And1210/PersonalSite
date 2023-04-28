@@ -1,0 +1,121 @@
+/* Overall Page Layout */
+.timeline-layout-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-gap: 0;
+}
+
+.timeline-layout-item {
+  height: 100%;
+  margin: 1rem 1rem;
+}
+
+/* Title Stuff */
+.timeline-title-container {
+  text-align: center;
+}
+
+.timeline-title {
+  font-family: "LatoBold";
+  font-size: 4rem;
+}
+
+.reset-button {
+  font-size: 40px;
+  position: absolute;
+  left: 2rem;
+  top: 1.5rem;
+}
+
+/* Timeline Drawing */
+.timeline {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: #FFF;
+  top: 50%;
+  left: 3%;
+  right: 3%;
+  margin-top: -1px;
+}
+
+.timeline-container {
+  height: 50%;
+  width: 20%;
+  position: relative;
+  color: #000;
+}
+
+.timeline-container::before {
+  display: inline-block;
+  color: #FFF;
+  content: attr(date);
+  font-size: 20px;
+  font-family: "Lato";
+  width: 75%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100% + 15px);
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid #FFF;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
+  width: 75%;
+  height: 75%;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  --rotX: 0deg;
+  font-family: "Lato";
+  font-size: 16px;
+}
+
+/* .timeline-item:hover {
+  transform: rotateX(var(--rotX)) scale(1.1);
+} */
+
+.timeline-container:nth-child(even) {
+  transform: rotateX(180deg) translateY(-100%);
+}
+.timeline-container:nth-child(even)::before {
+  transform: rotateX(180deg) translateX(-50%);
+}
+
+.flip {
+  --rotX: 180deg;
+  transform: rotateX(var(--rotX));
+}
+
+.can-click {
+  cursor: pointer;
+}
+
+.can-click:hover {
+  transform: rotateX(var(--rotX)) scale(1.1);
+}
